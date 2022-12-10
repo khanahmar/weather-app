@@ -1,3 +1,5 @@
+const temp = document.querySelector(".temp");
+
 const options = {
   method: "GET",
   headers: {
@@ -11,5 +13,9 @@ fetch(
   options
 )
   .then((response) => response.json())
-  .then((response) => console.log(response))
+  .then((response) => {
+    temp.innerHTML = temp.response;
+    console.log(temp.response);
+    console.log(response);
+  })
   .catch((err) => console.error(err));
